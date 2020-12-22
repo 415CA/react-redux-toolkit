@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRecipes, recipesSelector } from './slices/recipes';
+import { fetchRecipes, recipesSelector } from './recipes';
 
 const App = () => {
   const dispatch = useDispatch();
