@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SignUpForm = ({ onSubmit }) => (
+const SignInForm = ({ onSubmit }) => (
   <div>
     <form onSubmit={onSubmit}>
       <label htmlFor='email'>
@@ -11,9 +11,9 @@ const SignUpForm = ({ onSubmit }) => (
         Password
         <input name='password' type='password' placeholder='Password' />
       </label>
-      <button type='submit'>Sign Up</button>
+      <button type='submit'>Sign in</button>
     </form>
   </div>
 );
 
-export default SignUpForm;
+export default SignInForm;

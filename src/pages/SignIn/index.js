@@ -5,6 +5,9 @@ import { AuthContext } from '../../components/Authentication/Firebase/Context';
 import { authentication } from '../../components/Authentication/Firebase/Firebase';
 import * as ROUTES from '../../constants/Routes';
 import { setUserStatus } from '../../redux/slices/User';
+import SignInForm from './Form';
+import { PasswordForgetLink } from '../PasswordForget';
+import { SignUpLink } from '../SignUp';
 
 const SignIn = ({ history }) => {
   const dispatch = useDispatch();
@@ -33,17 +36,9 @@ const SignIn = ({ history }) => {
   return (
     <div>
       <h1>Sign in</h1>
-      <form onSubmit={handleLogin}>
-        <label htmlFor='email'>
-          Email
-          <input name='email' type='email' placeholder='Email' />
-        </label>
-        <label htmlFor='password'>
-          Password
-          <input name='password' type='password' placeholder='Password' />
-        </label>
-        <button type='submit'>Sign in</button>
-      </form>
+      <SignInForm onSubmit={handleLogin} />
+      <PasswordForgetLink />
+      <SignUpLink />
     </div>
   );
 };

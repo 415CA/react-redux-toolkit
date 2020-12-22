@@ -1,5 +1,13 @@
 import React from 'react';
+import PasswordChange from '../PasswordChange';
+import PasswordForget from '../PasswordForget';
 
-const Account = () => <div>Account</div>;
+const Account = () => (
+  <div>
+    <h1>Account Page</h1>
+    <PasswordForget />
+    <PasswordChange />
+  </div>
+);
 
 export default Account;

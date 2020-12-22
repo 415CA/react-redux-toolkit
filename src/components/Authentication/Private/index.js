@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { AuthContext } from '../Firebase/Context';
 import * as ROUTES from '../../../constants/Routes';
+import { AuthContext } from '../Firebase/Context';
 
 const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
   const { currentUser } = useContext(AuthContext);

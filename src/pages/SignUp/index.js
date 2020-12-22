@@ -1,7 +1,9 @@
 import React, { useCallback } from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 import { authentication } from '../../components/Authentication/Firebase/Firebase';
 import * as ROUTES from '../../constants/Routes';
+import SignUpForm from './Form';
 
 const SignUp = ({ history }) => {
   const handleSignUp = useCallback(
@@ -21,19 +23,17 @@ const SignUp = ({ history }) => {
   return (
     <div>
       <h1>Sign up</h1>
-      <form onSubmit={handleSignUp}>
-        <label htmlFor='email'>
-          Email
-          <input name='email' type='email' placeholder='Email' />
-        </label>
-        <label htmlFor='password'>
-          Password
-          <input name='password' type='password' placeholder='Password' />
-        </label>
-        <button type='submit'>Sign Up</button>
-      </form>
+      <SignUpForm onSubmit={handleSignUp} />
     </div>
   );
 };
 
+const SignUpLink = () => (
+  <p>
+    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+  </p>
+);
+
 export default withRouter(SignUp);
+
+export { SignUpLink, SignUpForm };

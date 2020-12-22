@@ -1,13 +1,13 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { userSelector } from '../../redux/slices/User';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Authentication/Firebase/Context';
 import Authorized from './Authorized';
 import NonAuthorized from './NonAuthorized';
+import Private from '../Authentication/Private';
 
 const Navigation = () => {
-  const { authUser } = useSelector(userSelector);
+  const { currentUser } = useContext(AuthContext);
 
-  return authUser ? <Authorized /> : <NonAuthorized />;
+  return currentUser ? <Private component={Authorized} /> : <NonAuthorized />;
 };
 
 export default Navigation;
