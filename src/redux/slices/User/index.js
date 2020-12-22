@@ -6,6 +6,9 @@ export const initialState = {
   data: [],
   query: '',
   authUser: false,
+  error: null,
+  loading: false,
+  hasErrors: false,
 };
 
 // Slice for Reducers
