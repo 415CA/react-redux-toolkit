@@ -8,7 +8,7 @@ import { setUserStatus } from '../../redux/slices/User';
 import SignInForm from './Form';
 import { PasswordForgetLink } from '../PasswordForget';
 import { SignUpLink } from '../SignUp';
-import { Google } from '../../components/Authentication/Social';
+import Google from '../../components/Authentication/Social';
 
 const SignIn = ({ history }) => {
   const dispatch = useDispatch();
