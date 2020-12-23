@@ -8,7 +8,6 @@ import Landing from '../../pages/Landing';
 import PasswordForget from '../../pages/PasswordForget';
 import SignIn from '../../pages/SignIn';
 import SignUp from '../../pages/SignUp';
-import { AuthProvider } from '../Authentication/Firebase/Context';
 import PrivateRoute from '../Authentication/Private';
 import Navigation from '../Navigation';
 
@@ -19,7 +18,7 @@ const NoMatch = () => (
 );
 
 const App = () => (
-  <AuthProvider>
+  <>
     <Router>
       <div>
         <Navigation />
@@ -37,7 +36,7 @@ const App = () => (
         </Switch>
       </div>
     </Router>
-  </AuthProvider>
+  </>
 );
 
 export default App;

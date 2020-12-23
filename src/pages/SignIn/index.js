@@ -8,6 +8,7 @@ import { setUserStatus } from '../../redux/slices/User';
 import SignInForm from './Form';
 import { PasswordForgetLink } from '../PasswordForget';
 import { SignUpLink } from '../SignUp';
+import { Google } from '../../components/Authentication/Social';
 
 const SignIn = ({ history }) => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const SignIn = ({ history }) => {
     <div>
       <h1>Sign in</h1>
       <SignInForm onSubmit={handleLogin} />
+      <Google />
       <PasswordForgetLink />
       <SignUpLink />
     </div>
