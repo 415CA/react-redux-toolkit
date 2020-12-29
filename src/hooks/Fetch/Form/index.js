@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import useDataApi from '../Axios/index';
 
-function App() {
+const FetchForm = () => {
   const [query, setQuery] = useState('redux');
   const [
     { data, isLoading, isError },
@@ -35,6 +36,6 @@ function App() {
       )}
     </>
   );
-}
+};
 
-export default App;
+export default FetchForm;
