@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import React, { useState } from 'react';
 import useFetchData from './index';
 
@@ -7,6 +8,8 @@ const Test = () => {
     `http://hn.algolia.com/api/v1/search?query=redux`,
     query,
   );
+
+  console.log(data);
 
   return (
     <>
@@ -27,12 +30,13 @@ const Test = () => {
         <div>Loading ...</div>
       ) : (
         <ul>
-          {data &&
-            data.hits.map((item) => (
-              <li key={item.objectID}>
-                <a href={item.url}>{item.title}</a>
-              </li>
-            ))}
+          {!isLoading && data
+            ? data.hits.map((item) => (
+                <li key={item.objectID}>
+                  <a href={item.url}>{item.title}</a>
+                </li>
+              ))
+            : null}
         </ul>
       )}
     </>
